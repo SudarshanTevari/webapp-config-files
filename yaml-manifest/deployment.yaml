@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: web-app
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: web-app
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: web-app
-        image: sudarshantevari/web-app:21
+        image: sudarshantevari/web-app:24
         command: ["/bin/sh"]
         args: ["-c","sh /usr/local/tomcat/bin/startup.sh;while true; do echo hello; sleep 10;done"]
         ports:
